@@ -8,6 +8,7 @@ import java.net.URI;
 
 public class TestHdfsClient {
     public static void main(String[] args) throws Exception{
+        //8020  和 9000  FileSystem 端口，50070 是web端口
         Configuration configuration = new Configuration();
         //这里指定使用的是 hdfs 文件系统
         configuration.set("fs.defaultFS","hdfs://10.90.1.176:8020");
