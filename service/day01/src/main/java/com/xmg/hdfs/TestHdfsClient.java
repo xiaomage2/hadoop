@@ -21,6 +21,7 @@ public class TestHdfsClient {
 
         Configuration conf = new Configuration();
         //conf.set( "fs.defaultFS" , "hdfs://10.90.1.176:50070" );
+
         FileSystem fs = FileSystem.get(new URI("hdfs://10.90.1.176:8020"), conf, "hdfs");
         System.out.println(">>>>>>>>");
         fs.close();
