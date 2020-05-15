@@ -17,6 +17,10 @@ public class WordCountDriver {
     public static void main(String[] args) throws Exception{
         //通过 Job 类来封装本次的 mr 的相关程序
         Configuration conf = new Configuration();
+
+        //本地模式跑任务  默认是 local  模式
+        //conf.set("mapreduce.framework.name","local");
+
         Job job = Job.getInstance(conf);
 
         //指定本次 mrjob  jar 包的运行主类
