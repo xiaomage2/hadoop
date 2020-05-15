@@ -38,6 +38,9 @@ public class WordCountDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
+        //设置分区，默认是1，默认的分区规则：分局map输出<key，value> 中的 key.hashcode % reduceTaskNum  key 的 哈希取模
+        job.setNumReduceTasks(2);
+
         //指定本次 mr 输入的数据的 路径 和 输出结果 存在什么位置
         FileInputFormat.setInputPaths(job,"/hdfsByJava/wordCount/input");
         FileOutputFormat.setOutputPath(job,new Path("/hdfsByJava/wordCount/output"));
